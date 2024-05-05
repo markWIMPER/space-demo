@@ -3,6 +3,7 @@ import assets from "../Utils/assets";
 import Resources from "../Utils/Resources";
 import Controls from "./Controls";
 import Environment from "./Environment";
+import Floor from "./Floor";
 import Room from "./Room";
 
 export default class World {
@@ -11,6 +12,7 @@ export default class World {
     this.resources = new Resources(assets);
     this.experience = new Experience();
     this.controls = new Controls();
+    this.floor = new Floor();
     this.scene = this.experience.scene;
 
     this.resources.on("ready", () => {

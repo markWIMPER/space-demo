@@ -8,6 +8,7 @@ export default class Renderer {
   canvas: any;
   camera: any;
   renderer: THREE.WebGLRenderer;
+  composer: EffectComposer;
 
   constructor() {
     this.experience = new Experience();
@@ -42,6 +43,9 @@ export default class Renderer {
   }
 
   update() {
-    this.renderer.render(this.scene, this.camera.perspectiveCamera);
+    /* 透视相机 */
+    // this.renderer.render(this.scene, this.camera.perspectiveCamera);
+    /* 正交相机 */
+    this.renderer.render(this.scene, this.camera.orthographicCamera);
   }
 }
