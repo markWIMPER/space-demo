@@ -70,7 +70,16 @@ export default class Room {
         //   // map: this.resources.items.screen,
         //   color: 0x00ffff,
         // });
-        child.children[1].material = new THREE.ShaderMaterial(glowShader);
+        // child.children[1].material = new THREE.ShaderMaterial(glowShader);
+        child.children[1].material = new THREE.MeshStandardMaterial({
+          color: 0xffffff,
+          emissive: 0x2c3e50,
+        });
+
+        // 使其自发光
+        const pointLight = new THREE.PointLight("#2C3E50", 1);
+        pointLight.position.x = -3;
+        child.children[1].add(pointLight);
       }
       if (child.name === "Aquarium") {
         child.children[0].material = new THREE.MeshPhysicalMaterial();

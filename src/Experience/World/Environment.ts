@@ -9,6 +9,7 @@ export default class Environment {
     this.experience = new Experience();
     this.scene = this.experience.scene;
     this.setSunLight();
+    // this.setPointLight();
   }
 
   setSunLight() {
